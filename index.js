@@ -31,7 +31,7 @@ function lancerRows({ name, occupation, rate }) {
   $tr.innerHTML = `
 <td>${name}</td>
 <td>${occupation}</td>
-<td>$${rate}</td>
+<td>${rate}</td>
 `;
   return $tr;
 }
@@ -39,7 +39,7 @@ function lancerRows({ name, occupation, rate }) {
 function freeRows() {
   const $tbody = document.createElement(`tbody`);
   const $fLancers = fLancers.map(lancerRows);
-  $tbody.replaceChildren(...$fLancers);
+  $tbody.replaceChildren($fLancers);
   return $tbody;
 }
 
@@ -58,6 +58,6 @@ function render() {
 <tbody id="lancerRows"></tbody>
 </table>
 `;
-  $app.querySelector(`#lancerRows`).replaceWith(lancerRows);
+  $app.querySelector(`#lancerRows`).replaceWith(lancerRows());
 }
 render();
