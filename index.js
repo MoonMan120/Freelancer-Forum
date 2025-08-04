@@ -19,6 +19,7 @@ function createLancers() {
   const rate =
     PRICE_RANGE.min +
     Math.floor(Math.random() * (PRICE_RANGE.max - PRICE_RANGE.min));
+
   return { name, occupation, rate };
 }
 
@@ -37,7 +38,7 @@ function lancerRows({ name, occupation, rate }) {
 }
 
 function freeRows() {
-  const $tbody = document.createElement(`tbody`);
+  const $tbody = document.createElement("tbody");
   const $fLancers = fLancers.map(lancerRows);
   $tbody.replaceChildren($fLancers);
   return $tbody;
